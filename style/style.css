@@ -12,8 +12,13 @@ nav {
   left: 0;
   width: 100%;
   transition: all 0.3s ease-out;
-  transform: translateY(0%);
   z-index: 2;
+  animation: nav 0.5s ease-in 0s 1;
+}
+@keyframes nav {
+  0%{
+    transform: translateY(-5em);
+  }
 }
 
 .navbar-scrolled {
@@ -278,7 +283,7 @@ background-size: cover;
   scale: 1.1;
   background-image: url("../media/work-bg.png");
   backdrop-filter: blur(10px) scale(1);
-  box-shadow: 2px 1px 1rem #1b1b1b;
+  box-shadow: 1px 2px .6rem #610000;
 }
 .worktext{
   transition: all 0.3s ease;
@@ -332,6 +337,7 @@ form{
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   gap: 2rem;
   margin-top: 2em;
   padding: 2rem;
@@ -351,9 +357,6 @@ form>label>input,form>input{
   box-shadow: 2px 2px 0.2rem #222;
   font-size: 3rem;
   padding: 0 1rem;
-}
-form>label>input,form>input,form>div>label>input{
-
 }
 form>div{
   display: flex;
@@ -380,14 +383,21 @@ form>div>label>input{
   /* align-items: center; */
 }
 form>div>input[type = submit]{
-  cursor: pointer;
   height: 2em;
-  /* width: 5em; */
-  font-size: 3rem;
   border-radius: 22px;
-  background-color: rgba(255, 0, 0, 0.788);
-  border: none;
+  background-color: var(--work-bg);
   backdrop-filter: blur(5px);
+  outline: none;
+  border: 1px solid transparent;
+  box-shadow: 2px 2px 0.2rem #222;
+  font-size: 3rem;
+  padding: 0 1rem;
+  transition: all 0.4s ease-in;
+}
+form>div>input[type = submit]:hover{
+  cursor: pointer;
+  background-color: rgba(255, 0, 0, 0.788);
+  box-shadow: 2px 2px 0.2rem #330000;
 }
 form>div>label>textarea{
   height: 5.4em;
@@ -403,4 +413,63 @@ form>div>label>textarea{
 }
 form>div>label>textarea::-webkit-scrollbar {
   display: none;
+}
+input,textarea{
+  transition: all 0.4s ease-in;
+  resize: none;
+}
+input:invalid,textarea:invalid{
+  box-shadow: 2px 2px 0.2rem #b30000;
+}
+input:valid,textarea:valid{
+  box-shadow: 2px 2px 0.2rem #008b00;
+}
+input:active,textarea:active{
+  box-shadow: 2px 2px 0.2rem #222;
+}
+input:focus,textarea:focus{
+  box-shadow: 2px 2px 0.2rem #555;
+}
+input:-webkit-autofill,textarea:-webkit-autofill,
+input:-webkit-autofill:hover,textarea:-webkit-autofill:hover,
+input:-webkit-autofill:focus,textarea:-webkit-autofill:focus,
+input:-webkit-autofill:active,textarea:-webkit-autofill:active {
+    -webkit-text-fill-color: initial !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+#contact-me{
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+#footer{
+  width: 100vw;
+  height: 7em; 
+  background-color: var(--work-bg);
+  backdrop-filter: blur(5px);
+  background-attachment: fixed;
+}
+#footer>div>span>a{
+  font-size: 4rem;
+}
+.leftandrightfooter{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 2rem;
+}
+.leftandrightfooter>.right>ul{
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.termsconditions{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: .2rem;
 }

@@ -14,7 +14,7 @@ body::-webkit-scrollbar {
 :root {
   --text-color: white;
   --bg-color: #0e1116;
-  --work-bg: rgba(22, 21, 21, 0.904);
+  --work-bg: rgba(22, 21, 21, 0.76);
   --hover-color: ;
   --border-color: rgb(146, 146, 146);
   --button-color: ;
@@ -45,4 +45,26 @@ h2{
   text-align: center;
   font-size: 6rem;
   margin-top: 5rem;
+}
+
+.tilt-effect {
+  transition: transform 0.3s;
+}
+
+.tilt-effect:hover {
+  transform: perspective(1000px) rotateX(-10deg) rotateY(10deg);
+}
+
+
+
+.particle {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+  z-index: 10000000;
+  width: 2px;
+  height: 2px;
+  background-color: black;
+  border-radius: 50%;
+  will-change: transform;
 }

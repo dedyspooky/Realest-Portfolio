@@ -45,3 +45,50 @@ navLinks.forEach(link => {
     this.classList.add('active');
   });
 });
+
+// const timeOfDay = document.getElementById('hello');
+// function updateTime() {
+//   let currentTime = new Date();
+//   let currentHour = currentIndex.getHours();
+//   if(currentHour<12){
+//     timeOfDay.innerHTML = "Good Morning! I am Aviral";
+//   }
+//   else if (currentHour<18) {
+//     timeOfDay.innerHTML = "Good Afternoon! I am Aviral";
+//   }
+//   else{
+//     timeOfDay.innerHTML = "Good Evening! I am Aviral";
+//   }
+// }
+// setInterval(updateTime(),1000)
+
+
+var works = document.querySelectorAll(".tilt-effect");
+
+works.forEach(function(work) {
+  work.addEventListener("mousemove", tilt);
+  work.addEventListener("mouseleave", resetTilt);
+});
+
+function tilt(event) {
+  var workItem = this,
+    rect = workItem.getBoundingClientRect(),
+    x = event.clientX - rect.left,
+    y = event.clientY - rect.top,
+    centerX = rect.width / 2,
+    centerY = rect.height / 2,
+    deltaX = x - centerX,
+    deltaY = y - centerY,
+    percentageX = deltaX / (rect.width / 2),
+    percentageY = deltaY / (rect.height / 2),
+    maxTilt = 10;
+
+  workItem.style.transform = "perspective(1000px) rotateX(" + -percentageY * maxTilt + "deg) rotateY(" + percentageX * maxTilt + "deg)";
+}
+
+function resetTilt() {
+  this.style.transform = "perspective(1000px) rotateX(0) rotateY(0)";
+}
+
+
+// TILT SHINE

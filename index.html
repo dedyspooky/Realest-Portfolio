@@ -54,7 +54,7 @@
             <div id="home-left">
                 <div class="text-container">
                     <div class="intro-helloandskill">
-                        <h1 class="hello">
+                        <h1 class="hello" id="hello autocomplete="off"">
                             Hello! I am Aviral
                         </h1>
                         <div class="skilltoggle">
@@ -115,7 +115,7 @@
                                 <span>90%</span>
                             </div>
                             <div class="bar">
-                                <div id="html-bar"></div>
+                                <div id="html-bar" class="animation-element"></div>
                             </div>
                         </div>
                         <div class="skills">
@@ -124,7 +124,7 @@
                                 <span>75%</span>
                             </div>
                             <div class="bar">
-                                <div id="css-bar"></div>
+                                <div id="css-bar" class="animation-element"></div>
                             </div>
                         </div>
                         <div class="skills">
@@ -133,7 +133,7 @@
                                 <span>68%</span>
                             </div>
                             <div class="bar">
-                                <div id="javascript-bar"></div>
+                                <div id="javascript-bar" class="animation-element"></div>
                             </div>
                         </div>
                         <div class="skills">
@@ -142,7 +142,7 @@
                                 <span>63%</span>
                             </div>
                             <div class="bar">
-                                <div id="c-bar"></div>
+                                <div id="c-bar" class="animation-element"></div>
                             </div>
                         </div>
                     </div>
@@ -155,7 +155,7 @@
                     </div>
                     <div class="workscontainer">
                         <div class="worksrow" id="worksrow-1">
-                            <div class="works">
+                            <div class="works tilt-effect">
                                 <div class="photo">
                                     <img src="media\spotifyui.png" alt="Spotify UI" class="workphoto">
                                 </div>
@@ -164,7 +164,7 @@
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                                 </div>
                             </div>
-                            <div class="works">
+                            <div class="works tilt-effect">
                                 <div class="photo">
                                     <img src="media\airesui.png" alt="AIRES UI" class="workphoto">
                                 </div>
@@ -173,7 +173,7 @@
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                                 </div>
                             </div>
-                            <div class="works">
+                            <div class="works tilt-effect">
                                 <div class="photo">
                                     <img src="media/calcui.png" alt="Calculator" class="workphoto">
                                 </div>
@@ -184,7 +184,7 @@
                             </div>
                         </div>
                         <div class="worksrow" id="worksrow-2">
-                            <div class="works">
+                            <div class="works tilt-effect">
                                 <div class="photo">
                                     <img src="media/mealswaviralui.png" alt="Meals with Aviral UI" class="workphoto">
                                 </div>
@@ -193,7 +193,7 @@
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                                 </div>
                             </div>
-                            <div class="works">
+                            <div class="works tilt-effect">
                                 <div class="photo">
                                     <img src="media/apparelcoui.png" alt="Xypo" class="workphoto">
                                 </div>
@@ -202,7 +202,7 @@
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                                 </div>
                             </div>
-                            <!-- <div class="works">
+                            <!-- <div class="works tilt-effect">
                                 <div class="photo">
                                     <img src="" alt="" class="workphoto">
                                 </div>
@@ -213,7 +213,7 @@
                             </div>  -->
                         </div>
                         <!-- <div class="worksrow" id="worksrow-3">
-                            <div class="works">
+                            <div class="works tilt-effect">
                                 <div class="photo">
                                     <img src="" alt="" class="workphoto">
                                 </div>
@@ -222,7 +222,7 @@
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                                 </div>
                             </div>
-                            <div class="works">
+                            <div class="works tilt-effect">
                                 <div class="photo">
                                     <img src="" alt="" class="workphoto">
                                 </div>
@@ -231,7 +231,7 @@
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                                 </div>
                             </div>
-                            <div class="works">
+                            <div class="works tilt-effect">
                                 <div class="photo">
                                     <img src="" alt="" class="workphoto">
                                 </div>
@@ -241,27 +241,61 @@
                                 </div>
                             </div>
                         </div> -->
+                        <div class="moreprojects">
+                            <a href="projects.html" id="moreprojectslink">
+                                More Projects <i class="fa-solid fa-chevrons-right"></i>
+                            </a>
+                        </div>
                 </div>
                     <div class="contact-container">
                         <div id="contact-me" class="section">
-                            <h2 class="contact-me-header"><span><</span>Contact Me<span>/></span></h2>
                             <div class="contactform">
+                                <h2 class="contact-me-header"><span><</span>Contact Me<span>/></span></h2>  
                                 <h4 class="contactheader">
                                     Got Some Projects?
                                 </h4>
                                 <form action="" name="contactme" method="post" id="contact">
                                     <div class="name">
-                                        <label for="name1">First Name:<br><input type="text" name="FName" id="name1" class="names" required></label>
-                                        <label for="name2">Last Name:<br><input type="text" name="LName" id="name2" class="names" required></label>
-                                        <label for="email">Email Address:<br><input type="email" name="Email" id="email" required></label>
+                                        <label for="name1">First Name:<br><input type="text" name="FName" id="name1" class="names" required autocomplete="off"></label>
+                                        <label for="name2">Last Name:<br><input type="text" name="LName" id="name2" class="names" required autocomplete="off"></label>
+                                        <label for="email">Email Address:<br><input type="email" name="Email" id="email" required autocomplete="off"></label>
                                     </div>
                                     <div class="messageandsend">
-                                    <label for="message">Message:<br><textarea name="message" id="message" cols=100" rows="19" min="25" max="255"></textarea></label>
+                                    <label for="message">Message:<br><textarea name="message" id="message" cols=100" rows="19" min="25" max="255" required autocomplete="off"></textarea></label>
                                     <input type="submit" value="Send Message">
                                 </div>
                                 </form>
                             </div>
-                        </div>
+                            <div id="footer">
+                                <div class="leftandrightfooter">
+                                    <div class="left"><span class="name"><a href="#" class="nav-link">Aviral.</a></span></div>
+                                    <div class="termsconditions">
+                                        <div class="buymeacoffee">
+                                            <a href="" class="buycoffee">Buy me a coffee :)</a>
+                                        </div>
+                                        <div class="copyright">
+                                            Copyright&copy; Aviral Ale
+                                        </div>
+                                        <div class="termsandconditionslinkcontainer">
+                                        <a href="termsandconditions.html" target="_blank" class="termsandconditions">Terms and Conditions</a>&nbsp;&nbsp;<a href="/termsandconditions.html" target="_blank" class="termsandconditions">Privacy Policy</a>
+                                    </div>
+                                    </div>
+                                    <div class="right">
+                                        <ul class="links"><a href="" class="links-footer">
+                                                <li class="footerlinks">Instagram</li>
+                                            </a><a href="" class="links-footer">
+                                                <li class="footerlinks">Facebook</li>
+                                            </a><a href="" class="links-footer">
+                                                <li class="footerlinks">Linked In</li>
+                                            </a><a href="" class="links-footer">
+                                                <li class="footerlinks">Mail me</li>
+                                            </a><a href="" class="links-footer">
+                                                <li class="footerlinks">Github</li>
+                                            </a></ul>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
                     </div>
                 </div>
             </div>
