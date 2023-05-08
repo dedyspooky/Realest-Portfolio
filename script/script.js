@@ -91,4 +91,72 @@ function resetTilt() {
 }
 
 
-// TILT SHINE
+// Dark Mode Light Mode
+const root = document.documentElement;
+const togglebtn = document.getElementById('dn');
+togglebtn.addEventListener('change', function () {
+  if (togglebtn.checked) {
+    root.style.setProperty('--text-color','white');
+    root.style.setProperty('--bg-color','#0e1116');
+    root.style.setProperty('--work-bg','rgba(22, 21, 21, 0.836)');
+    root.style.setProperty('--border-color','rgb(146, 146, 146)');
+    root.style.setProperty('--link-color','black');
+  } else {
+    root.style.setProperty('--text-color','black');
+    root.style.setProperty('--bg-color','#F1EEE9');
+    root.style.setProperty('--work-bg','rgba(233, 234, 234, 0.836)');
+    root.style.setProperty('--border-color','rgb(109, 109, 109)');
+    root.style.setProperty('--link-color','white');
+  }  
+})
+submitBtn = document.getElementById('submit');
+const homeDesc = document.getElementsByClassName('home-desc');
+function applyResponsiveStyles() {
+  if (window.innerWidth <= 1120) {
+    submitBtn.value = 'Send';
+  }
+  else{
+    submitBtn.value = 'Send Message';
+  }
+}
+function updateHomeDesc() {
+  const homeDesc = document.querySelector('.home-desc');
+  if (window.innerWidth <= 640) {
+    homeDesc.textContent = 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.';
+  }
+}
+
+// Call the function initially and on window resize
+window.addEventListener('resize', updateHomeDesc);
+updateHomeDesc();
+// Call the function initially and on window resize
+window.addEventListener('resize', applyResponsiveStyles);
+applyResponsiveStyles();
+
+window.onload = ()=> {
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    togglebtn.checked = true;
+    console.log('Dark mode is enabled');
+  } else {
+    togglebtn.checked = false;
+    console.log('Light mode is enabled');
+  }
+}
+
+
+function toggleMenu() {
+  const menu = document.getElementById('respmenu');
+  menu.style.right = (menu.style.right === '-100vw') ? '0vw' : '-100vw';
+}
+
+function closeMenu() {
+  const menu = document.getElementById('respmenu');
+  menu.style.right = '-100vw';
+}
+
+// Add event listeners for menu links
+const menuLinks = document.getElementsByClassName('nav-link');
+for (let i = 0; i < menuLinks.length; i++) {
+  menuLinks[i].addEventListener('click', closeMenu);
+}
+
