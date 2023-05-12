@@ -41,7 +41,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="" class="nav-link" data-link="resume">
+                        <a href="https://drive.google.com/uc?export=download&id=1amrfajI0haI5CPrfxlfOQINC6Lx1q7oH" class="nav-link" data-link="resume">
                             <span class="navlist navlist-5"><</span> Resume <span class="navlist navlist-5">/></span>
                         </a>
                     </li>
@@ -85,7 +85,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="" class="nav-link" data-link="resume" onclick="closeMenu()">
+                    <a href="https://drive.google.com/uc?export=download&id=1amrfajI0haI5CPrfxlfOQINC6Lx1q7oH" class="nav-link" data-link="resume" onclick="closeMenu()">
                         <span class="navlist navlist-5"><</span> Resume <span class="navlist navlist-5">/></span>
                     </a>
                 </li>
@@ -300,6 +300,7 @@
                                 More Projects <i class="fa-solid fa-chevron-right"></i><i class="fa-solid fa-chevron-right"></i></i>
                             </a>
                         </div>
+                        <div id="background"></div>
                 </div>
                     <div class="contact-container">
                         <div id="contact-me" class="section">
@@ -308,16 +309,16 @@
                                 <h4 class="contactheader">
                                     Got Some Projects?
                                 </h4>
-                                <form action="" name="contactme" method="post" id="contact">
+                                <form action="form.php" name="contactme" method="post" id="contact-form">
                                     <div class="name">
                                         <label for="name1">First Name:<br><input type="text" name="FName" id="name1" class="names" required autocomplete="off"></label>
                                         <label for="name2">Last Name:<br><input type="text" name="LName" id="name2" class="names" required autocomplete="off"></label>
                                         <label for="email">Email Address:<br><input type="email" name="Email" id="email" required autocomplete="off"></label>
                                     </div>
                                     <div class="messageandsend">
-                                    <label for="message">Message:<br><textarea name="message" id="message" cols=100" rows="19" min="25" max="255" required autocomplete="off"></textarea></label>
-                                    <input id="submit" type="submit" value="Send Message">
-                                </div>
+                                        <label for="message">Message:<br><textarea name="message" id="message" cols="100" rows="19" min="25" max="255" required autocomplete="off"></textarea></label>
+                                        <input id="submit" type="submit" value="Send Message">
+                                    </div>
                                 </form>
                             </div>
                             <div id="footer">
@@ -364,5 +365,25 @@
         </div>
 </body>
 <script src="script/script.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function() {
+        $("#contact-form").submit(function(e) {
+            e.preventDefault();
+            var form = $(this);
+            var url = form.attr("action");
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: form.serialize(),
+                success: function(data) {
+                    alert(data);
+                    form.trigger("reset");
+                }
+            });
+        });
+    });
+</script>
 
 </html>

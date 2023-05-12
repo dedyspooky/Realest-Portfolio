@@ -160,3 +160,13 @@ for (let i = 0; i < menuLinks.length; i++) {
   menuLinks[i].addEventListener('click', closeMenu);
 }
 
+// FORM
+// const scriptURL = 'https://script.google.com/macros/s/AKfycbx_n4EXRe6xsUYvTAP9Q62tzcEguR6FsNdYevOQTmXRlWWbpra8V5FM3G0rUCj9tljg/exec'
+// const form = document.forms['contactme']
+
+// form.addEventListener('submit', e => {
+//   e.preventDefault()
+//   fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+//     .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+//     .catch(error => console.error('Error!', error.message))
+// })
