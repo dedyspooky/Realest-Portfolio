@@ -185,5 +185,3 @@ btn.addEventListener('click', () => {
 window.addEventListener('load', () => {
   chevron.style.transform = 'rotate(0deg)';
 })
-
-
