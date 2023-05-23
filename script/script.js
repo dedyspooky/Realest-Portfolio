@@ -122,7 +122,7 @@ function applyResponsiveStyles() {
 function updateHomeDesc() {
   const homeDesc = document.querySelector('.home-desc');
   if (window.innerWidth <= 640) {
-    homeDesc.textContent = 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.';
+    homeDesc.textContent = 'Aviral Ale, an 18-year-old web designer and developer, crafts stunning and functional websites with expertise in modern web tools.';
   }
 }
 
@@ -185,4 +185,5 @@ btn.addEventListener('click', () => {
 window.addEventListener('load', () => {
   chevron.style.transform = 'rotate(0deg)';
 })
+
 
