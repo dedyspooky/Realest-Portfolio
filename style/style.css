@@ -1146,6 +1146,24 @@ form > div > input[type="submit"]{
   nav{
     display: none;
   }
+  input:invalid,
+textarea:invalid,
+input:valid,
+textarea:valid,
+input:active,
+textarea:active,
+input:focus,
+textarea:focus{
+  box-shadow: none;
+}
+input,
+textarea{
+  transition: none;
+}
+.contact-container{
+  animation: none;
+  background-image: none;
+}
   .respmenu-contents>li>.nav-link{
     font-size: 2rem;
   }
