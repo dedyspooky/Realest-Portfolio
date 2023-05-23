@@ -170,3 +170,19 @@ for (let i = 0; i < menuLinks.length; i++) {
 //     .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
 //     .catch(error => console.error('Error!', error.message))
 // })
+
+const btn = document.getElementById("paragraph-btn-container");
+const chevron = document.getElementById("chevron");
+btn.addEventListener('click', () => {
+  if (description.style.display == 'none') {
+    description.style.display = 'block';
+    btn.style.animation = 'none';
+  } else {
+    chevron.style.transform = 'rotate(0deg)';
+    btn.style.animation = 'btn 2s ease 0s infinite';
+  }
+})
+window.addEventListener('load', () => {
+  chevron.style.transform = 'rotate(0deg)';
+})
+

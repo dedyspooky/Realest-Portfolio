@@ -4,10 +4,12 @@
   font-family: "Josefin Sans", sans-serif;
   color: var(--text-color);
   box-sizing: border-box;
+  transition: all 0.3s ease;
 }
 html{
   scroll-behavior: smooth;
   overflow-x: hidden;
+  width: 100vw;
 }
 body::-webkit-scrollbar {
   display: none;
@@ -56,6 +58,9 @@ a,a>li{
 }
 a:hover,a>li:hover{
   color: red;
+}
+p{
+  font-weight: lighter;
 }
 
 @media (prefers-color-scheme: light) {

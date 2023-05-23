@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="media/image-removebg-preview.png">
     <link rel="stylesheet" href="style/utilities.css">
     <link rel="stylesheet" href="style/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -122,39 +123,42 @@
                     </div>
                     <div class="socials">
                         <ul class="socials-home">
-                            <a href="" target="_blank">
+                            <a href="https://www.instagram.com/aviral.who_/" target="_blank">
                                 <li id="social-1" class="social-icon-home">
                                     <i class="fa-brands fa-instagram"></i>
                                 </li>
-                            </a><a href="" target="_blank">
+                            </a><a href="https://github.com/dedyspooky" target="_blank">
                                 <li id="social-2" class="social-icon-home">
                                     <i class="fa-brands fa-github"></i>
                                 </li>
-                            </a><a href="" target="_blank">
+                            </a><a href="https://www.linkedin.com/in/aviral-ale-027425262/" target="_blank">
                                 <li id="social-3" class="social-icon-home">
                                     <i class="fa-brands fa-linkedin"></i>
                                 </li>
-                            </a><a href="" target="_blank">
+                            </a><a href="mailto:aviralale@gmail.com" target="_blank">
                                 <li id="social-4" class="social-icon-home">
                                     <i class="fa-solid fa-envelope"></i>
                                 </li>
                             </a>
                         </ul>
                     </div>
-                        <p class="home-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta laboriosam
-                            iste dolorem minus tempore aliquam vero beatae quasi facere dolores saepe nostrum ullam
-                            fugiat, optio maiores quam recusandae voluptatem? Tenetur enim eum ipsum accusantium
-                            accusamus animi quia illo culpa voluptates aliquam, perspiciatis nihil? Error necessitatibus
-                            perspiciatis tempora ratione numquam, omnis praesentium? Quis illum vel nihil totam ipsa
-                            libero delectus veniam hic quas exercitationem harum consequatur temporibus repudiandae nam
-                            quidem quae reprehenderit sint, vero fugit, molestiae ea. Repellendus in tempora molestias
-                            illo omnis amet vel atque ad doloremque aperiam nesciunt tempore dolorum, corrupti expedita
-                            pariatur</p>
+                    
+                        <p class="home-desc" id="description">
+                            <span>&lt;p&gt;</span>
+                            Welcome to the profile of 18-year-old professional web designer and developer, Aviral Ale. Dedicated to creating
+                            beautiful and functional websites, Aviral combines beautiful new designs with powerful coding skills to deliver a
+                            great online experience. From responsive systems to user interactions, Aviral's work demonstrates a deep
+                            understanding of modern web tools. Explore this information and witness Aviral's creative vision and expertise in
+                            turning ideas into true digital appeal.<span>&lt;/p&gt;</span> </p>
                     </div>
                 </div>
                 <div id="home-right">
+                    <div class="home-img">
                     <img src="media\image-removebg-preview.png" alt="" class="me home">
+                    <img src="media\m028t0257_c_text_bubble_22feb23.png" alt="" class="rotatepfp me home">
+
                 </div>
+            </div>
             </div>
             <div id="about-me-container">
                 <div id="about-me" class="section">
@@ -365,25 +369,5 @@
         </div>
 </body>
 <script src="script/script.js"></script>
-<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
-<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
-<script>
-    $(document).ready(function() {
-        $("#contact-form").submit(function(e) {
-            e.preventDefault();
-            var form = $(this);
-            var url = form.attr("action");
-            $.ajax({
-                type: "POST",
-                url: url,
-                data: form.serialize(),
-                success: function(data) {
-                    alert(data);
-                    form.trigger("reset");
-                }
-            });
-        });
-    });
-</script>
 
 </html>
