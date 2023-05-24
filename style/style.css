@@ -303,7 +303,7 @@ h2 > span,p>span {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 .details>span{
   background-color: var(--text-color);
@@ -312,6 +312,7 @@ h2 > span,p>span {
   border-radius: 22px;
   opacity: .7;
   backdrop-filter: blur(5px);
+  font-size: 0.7rem;
 }
 .bar {
   position: relative;
@@ -326,7 +327,7 @@ h2 > span,p>span {
   background: var(--text-color);
 }
 .skills:not(:last-child) {
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 #html-bar {
   animation: html-fill 2s forwards;
@@ -1167,6 +1168,25 @@ form > div > input[type="submit"]{
   .hamburger-container{
     display: block;
   }
+  /* .bar{
+    display: none;
+  } */
+  .details {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  .skill {
+    position: relative;
+    top: calc(3em + 1rem);
+    width: 100%;
+  }
+  .skillpartition{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
   nav{
     display: none;
   }
@@ -1292,13 +1312,13 @@ height: 1.6em;
 .socials-home{
   position: fixed;
   flex-direction: column;
-  left: -0.5em;
+  right: 0;
   top: 50%;
   gap: 0.1rem;
   background: var(--work-bg);
   backdrop-filter: blur(5px);
   padding:0 0.5em;
-  border-radius: 0 22px 22px 0;
+  border-radius: 22px 0 0 22px;
   z-index: 5;
 }
 .social-icon-home>i{
