@@ -127,7 +127,7 @@ function applyResponsiveStyles() {
 }
 function updateHomeDesc() {
   if (window.innerWidth <= 640) {
-    homeDescription.innerText = 'Aviral Ale, an 18-year-old web designer and developer, crafts stunning and functional websites with expertise in modern web tools.';
+    homeDescription.innerHTML = '<span>&lt;p&gt;</span>Aviral Ale, an 18-year-old web designer and developer, crafts stunning and functional websites with expertise in modern web tools.<span>&lt;/p&gt;</span>';
   }
 }
 
