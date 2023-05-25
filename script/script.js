@@ -2,6 +2,27 @@ let date = new Date();
 let hour = date.getHours();
 let homeDescription = document.getElementById("description");
 // console.log("Hour = " + hour);
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!";
+let i = 0;
+
+function executeAnimation() {
+  const targetElement = document.getElementById('hello');
+  const interval = setInterval(() => {
+    targetElement.innerText = targetElement.innerText.split("").map((letter, index) => {
+      if (index < i) {
+        return targetElement.dataset.value[index];
+      }
+      return letters[Math.floor(Math.random() * 63)];
+    }).join("");
+    if (i >= 18) {
+      clearInterval(interval);
+    }
+    i++;
+  }, 50);
+};
+
+// Execute the animation when the page finishes loading
+window.addEventListener('load',executeAnimation());
 
 
 
@@ -51,23 +72,6 @@ navLinks.forEach(link => {
     this.classList.add('active');
   });
 });
-
-// const timeOfDay = document.getElementById('hello');
-// function updateTime() {
-//   let currentTime = new Date();
-//   let currentHour = currentIndex.getHours();
-//   if(currentHour<12){
-//     timeOfDay.innerHTML = "Good Morning! I am Aviral";
-//   }
-//   else if (currentHour<18) {
-//     timeOfDay.innerHTML = "Good Afternoon! I am Aviral";
-//   }
-//   else{
-//     timeOfDay.innerHTML = "Good Evening! I am Aviral";
-//   }
-// }
-// setInterval(updateTime(),1000)
-
 
 var works = document.querySelectorAll(".tilt-effect");
 
@@ -165,17 +169,6 @@ for (let i = 0; i < menuLinks.length; i++) {
   menuLinks[i].addEventListener('click', closeMenu);
 }
 
-// FORM
-// const scriptURL = 'https://script.google.com/macros/s/AKfycbx_n4EXRe6xsUYvTAP9Q62tzcEguR6FsNdYevOQTmXRlWWbpra8V5FM3G0rUCj9tljg/exec'
-// const form = document.forms['contactme']
-
-// form.addEventListener('submit', e => {
-//   e.preventDefault()
-//   fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-//     .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
-//     .catch(error => console.error('Error!', error.message))
-// })
-
 const btn = document.getElementById("paragraph-btn-container");
 const chevron = document.getElementById("chevron");
 btn.addEventListener('click', () => {
@@ -190,3 +183,5 @@ btn.addEventListener('click', () => {
 window.addEventListener('load', () => {
   chevron.style.transform = 'rotate(0deg)';
 })
+
+

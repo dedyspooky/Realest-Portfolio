@@ -95,11 +95,11 @@ nav {
 .hello {
   margin-top: 5rem;
   font-size: 6rem;
-  animation: hello 1.5s ease-in 0s 1;
+  animation: hello 2s ease-in 0s 1;
 }
 @keyframes hello {
   0% {
-    transform: translateX(-100rem);
+    opacity: 0;
   }
 }
 
