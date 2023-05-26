@@ -326,7 +326,7 @@ h2 > span,p>span {
   border-radius: 10px;
   background: var(--text-color);
 }
-.skills:not(:last-child) {
+.skills {
   margin-bottom: 1rem;
 }
 #html-bar {
