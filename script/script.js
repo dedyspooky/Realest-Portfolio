@@ -129,7 +129,7 @@ function updateActiveNavLink() {
       window.history.replaceState(null, '', `#${activeSection}`);
     }
   });
-}
+};
 
 // Add scroll event listener to update active nav link
 window.addEventListener('scroll', updateActiveNavLink);
@@ -157,11 +157,11 @@ function tilt(event) {
     maxTilt = 10;
 
   workItem.style.transform = "perspective(1000px) rotateX(" + -percentageY * maxTilt + "deg) rotateY(" + percentageX * maxTilt + "deg)";
-}
+};
 
 function resetTilt() {
   this.style.transform = "perspective(1000px) rotateX(0) rotateY(0)";
-}
+};
 
 
 // Dark Mode Light Mode
@@ -180,8 +180,8 @@ togglebtn.addEventListener('change', function () {
     root.style.setProperty('--work-bg','rgba(233, 234, 234, 0.836)');
     root.style.setProperty('--border-color','rgb(109, 109, 109)');
     root.style.setProperty('--link-color','white');
-  }  
-})
+  }
+});
 submitBtn = document.getElementById('submit');
 const homeDesc = document.getElementsByClassName('home-desc');
 function applyResponsiveStyles() {
@@ -191,12 +191,12 @@ function applyResponsiveStyles() {
   else{
     submitBtn.value = 'Send Message';
   }
-}
+};
 function updateHomeDesc() {
   if (window.innerWidth <= 640) {
     homeDescription.innerHTML = '<span>&lt;p&gt;</span>Aviral Ale, an 18-year-old web designer and developer, crafts stunning and functional websites with expertise in modern web tools.<span>&lt;/p&gt;</span>';
   }
-}
+};
 
 // Call the function initially and on window resize
 window.addEventListener('resize', updateHomeDesc);
@@ -213,24 +213,24 @@ window.onload = ()=> {
     togglebtn.checked = false;
     console.log('Light mode is enabled');
   }
-}
+};
 
 
 function toggleMenu() {
   const menu = document.getElementById('respmenu');
   menu.style.right = (menu.style.right === '-100vw') ? '0vw' : '-100vw';
-}
+};
 
 function closeMenu() {
   const menu = document.getElementById('respmenu');
   menu.style.right = '-100vw';
-}
+};
 
 // Add event listeners for menu links
 const menuLinks = document.getElementsByClassName('nav-link');
 for (let i = 0; i < menuLinks.length; i++) {
   menuLinks[i].addEventListener('click', closeMenu);
-}
+};
 
 const btn = document.getElementById("paragraph-btn-container");
 const chevron = document.getElementById("chevron");
@@ -242,9 +242,9 @@ btn.addEventListener('click', () => {
     chevron.style.transform = 'rotate(0deg)';
     btn.style.animation = 'btn 2s ease 0s infinite';
   }
-})
+});
 window.addEventListener('load', () => {
   chevron.style.transform = 'rotate(0deg)';
-})
+});
 
 
