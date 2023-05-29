@@ -62,18 +62,81 @@ function scrollFunction() {
 }
 }
 
+
+// ALL NAVLINKS
 const navLinks = document.querySelectorAll('.nav-link');
 
+// Add click event listeners to nav links
 navLinks.forEach(link => {
-  link.addEventListener('click', function() {
+  link.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    // Remove active class from all nav links
     navLinks.forEach(otherLink => {
       otherLink.classList.remove('active');
     });
+
+    // Add active class to the clicked nav link
     this.classList.add('active');
+
+    // Get the target section ID from the link's href attribute
+    const targetSection = this.getAttribute('href').substring(1);
+
+    // Scroll to the target section
+    const targetElement = document.getElementById(targetSection);
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop,
+        behavior: 'smooth'
+      });
+    }
   });
 });
 
-var works = document.querySelectorAll(".tilt-effect");
+// Function to update the active nav link based on scroll position
+function updateActiveNavLink() {
+  // Get the current scroll position
+  const scrollPosition = window.scrollY || window.pageYOffset;
+
+  // Get the height of the viewport
+  const viewportHeight = window.innerHeight;
+
+  // Calculate the scroll positions of the sections
+  const homeScrollPosition = 0;
+  const aboutMeScrollPosition = document.getElementById('about-me').offsetTop;
+  const projectsScrollPosition = document.getElementById('projects').offsetTop;
+  const contactMeScrollPosition = document.getElementById('contact-me').offsetTop;
+
+  // Determine the active section based on the scroll position
+  let activeSection = 'home';
+  if (scrollPosition >= aboutMeScrollPosition - viewportHeight / 2) {
+    activeSection = 'about-me';
+  }
+  if (scrollPosition >= projectsScrollPosition - viewportHeight / 2) {
+    activeSection = 'projects';
+  }
+  if (scrollPosition >= contactMeScrollPosition - viewportHeight / 2) {
+    activeSection = 'contact-me';
+  }
+
+  // Update the active class and URL of the nav links
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === `#${activeSection}`) {
+      link.classList.add('active');
+
+      // Update the URL to match the active section
+      window.history.replaceState(null, '', `#${activeSection}`);
+    }
+  });
+}
+
+// Add scroll event listener to update active nav link
+window.addEventListener('scroll', updateActiveNavLink);
+
+
+// TILT EFFECT ON PROJECTS
+let works = document.querySelectorAll(".tilt-effect");
 
 works.forEach(function(work) {
   work.addEventListener("mousemove", tilt);
