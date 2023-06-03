@@ -1104,6 +1104,9 @@ form > div > input[type="submit"]{
   width: 6em;
   font-size: 3rem;
 }
+#home-left{
+  width: 100%;
+}
 #footer{
   display: none;
 }
